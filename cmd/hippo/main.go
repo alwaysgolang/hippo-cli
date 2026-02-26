@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"hippo-cli/cmd/internal/build"
 	"os"
+
+	"github.com/alwaysgolang/hippo-cli/internal/build"
 )
 
 func main() {

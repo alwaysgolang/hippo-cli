@@ -3,7 +3,6 @@ package build
 import (
 	"bytes"
 	"fmt"
-	"hippo-cli/cmd/internal/ui"
 	"io/fs"
 	"os"
 	"os/exec"
@@ -11,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"hippo-cli/templates"
-
+	"github.com/alwaysgolang/hippo-cli/internal/ui"
+	"github.com/alwaysgolang/hippo-cli/templates"
 	"github.com/fatih/color"
 	"github.com/schollz/progressbar/v3"
 )
@@ -143,7 +142,6 @@ func runStep(message string, fn func() error, delay time.Duration) error {
 
 	err := fn()
 
-	// Минимальное время показа шага (для красивой анимации)
 	minDuration := 600 * time.Millisecond
 	elapsed := time.Since(start)
 
